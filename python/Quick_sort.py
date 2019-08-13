@@ -13,6 +13,7 @@ def quick_sort(input_list):
         left = input_list
         return quick_sort(left) + [mid] + quick_sort(right)
 
+
 if __name__ == "__main__":
     my_list = [1, 2, 6, 4, 10, 7, 4, 23, 9]
     beg = time.perf_counter()
