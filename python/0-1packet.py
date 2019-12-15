@@ -1,6 +1,3 @@
-import sys
-sys.setrecursionlimit(1000000)
-
 item_list = [15, 36, 7, 18, 26, 5, 51, 29, 10, 32]
 max_weight = 100
 maxW = 0
