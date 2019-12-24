@@ -39,16 +39,32 @@ class MyGraph:
             return
         visited = [False] * self.v_num
         visited[v_start] = True
-        v_queue = []
-        v_queue.append(v_start)
+        v_queue = [v_start]
         v_prev = [-1]*self.v_num
         while len(v_queue) != 0:
-            cur_node = self.n_metric[v_start]._head
-            while cur_node.next_node is not None:
-                if visited[cur_node.next_node.value] == False:
-                    visited[cur_node.next_node.value] = True
-                    v_prev[cur_node.next_node.value] = v_start
+            for v in v_queue:
+                cur_node = self.n_metric[v]._head
+                visited[v] = True
+                while cur_node.next_node is not None:
+                    if visited[cur_node.next_node.value] == False:
+                        v_prev[cur_node.next_node.value] = v
+                        v_queue.append(cur_node.next_node.value)
+                        visited[cur_node.next_node.value] = True
+                    cur_node = cur_node.next_node
+                v_queue.remove(v)
+            if v_dest in v_queue:
+                v_queue.clear()
+        print(v_prev)
+        self.print_road(v_prev, v_start, v_dest)
 
+    def print_road(self, v_prev, v_start, v_dest):
+        road = [v_dest]
+        while v_prev[v_dest] != -1 and v_dest != v_start:
+            road.append(v_prev[v_dest])
+            v_dest = v_prev[v_dest]
+        road.reverse()
+        for v in road:
+            print(v)
 
 
 if __name__ == "__main__":
@@ -58,15 +74,23 @@ if __name__ == "__main__":
     sample_graph.add_vertex()
     sample_graph.add_vertex()
     sample_graph.add_vertex()
+    sample_graph.add_vertex()
+    sample_graph.add_vertex()
+    sample_graph.add_vertex()
+    sample_graph.add_vertex()
     sample_graph.add_edge((0, 1))
     sample_graph.add_edge((0, 2))
-    sample_graph.add_edge((2, 3))
-    sample_graph.add_edge((3, 4))
+    sample_graph.add_edge((1, 4))
+    sample_graph.add_edge((2, 4))
     sample_graph.add_edge((1, 3))
-    sample_graph.add_edge((4, 2))
-    sample_graph.add_edge((3, 0))
-    sample_graph.add_edge((5, 0))
+    sample_graph.add_edge((2, 5))
+    sample_graph.add_edge((4, 6))
+    sample_graph.add_edge((4, 7))
+    sample_graph.add_edge((3, 6))
+    sample_graph.add_edge((5, 7))
+    sample_graph.add_edge((6, 8))
+    sample_graph.add_edge((7, 8))
     sample_graph.output_vertex()
     sample_graph.output_edge()
-    abc = [False, 5]
-    print(abc)
+    sample_graph.bfs(0, 5)
+

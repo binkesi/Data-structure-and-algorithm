@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad35c37a-0bac-408f-91ca-d9ff27aa42a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python/MyGraph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/MyGraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/MyGraph.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +12,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Data_structure_and_algorithm$priority_queue.coverage" NAME="priority_queue Coverage Results" MODIFIED="1576749844682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
-    <SUITE FILE_PATH="coverage/Data_structure_and_algorithm$MyGraph.coverage" NAME="MyGraph Coverage Results" MODIFIED="1577093370478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
+    <SUITE FILE_PATH="coverage/Data_structure_and_algorithm$MyGraph.coverage" NAME="MyGraph Coverage Results" MODIFIED="1577180953489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
     <SUITE FILE_PATH="coverage/Data_structure_and_algorithm$MyLinkedList.coverage" NAME="MyLinkedList Coverage Results" MODIFIED="1577088484827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -23,8 +23,9 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -39,12 +40,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2550" />
+          <entry key="py" value="2981" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2550" />
+          <entry key="Python" value="2981" />
         </counts>
       </usages-collector>
     </session>
@@ -66,13 +67,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/MyGraph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+            <state relative-caret-position="-50">
+              <caret line="49" column="60" lean-forward="true" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
-                <marker date="1577094453340" expanded="true" signature="99:104" ph="..." />
-                <marker date="1577094453340" expanded="true" signature="200:305" ph="..." />
-                <marker date="1577094453340" expanded="true" signature="792:855" ph="..." />
+                <marker date="1577181025076" expanded="true" signature="99:104" ph="..." />
+                <marker date="1577181025076" expanded="true" signature="200:305" ph="..." />
+                <marker date="1577181025076" expanded="true" signature="792:855" ph="..." />
               </folding>
             </state>
           </provider>
@@ -80,9 +81,7 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/MyLinkedList.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-825" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -260,13 +259,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20508982" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20708583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32930514" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32930514" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32930514" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -302,19 +302,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/MyLinkedList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-825" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/python/MyGraph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+        <state relative-caret-position="-50">
+          <caret line="49" column="60" lean-forward="true" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
-            <marker date="1577094453340" expanded="true" signature="99:104" ph="..." />
-            <marker date="1577094453340" expanded="true" signature="200:305" ph="..." />
-            <marker date="1577094453340" expanded="true" signature="792:855" ph="..." />
+            <marker date="1577181025076" expanded="true" signature="99:104" ph="..." />
+            <marker date="1577181025076" expanded="true" signature="200:305" ph="..." />
+            <marker date="1577181025076" expanded="true" signature="792:855" ph="..." />
           </folding>
         </state>
       </provider>
