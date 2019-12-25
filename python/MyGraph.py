@@ -33,6 +33,7 @@ class MyGraph:
                 print(edge)
                 v_node = v_node.next_node
 
+    # breadth-first-search
     def bfs(self, v_start, v_dest):
         if v_start == v_dest:
             print((v_start, v_dest))
