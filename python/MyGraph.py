@@ -67,6 +67,36 @@ class MyGraph:
         for v in road:
             print(v)
 
+    # depth-first-search
+    def dfs(self, v_start, v_dest):
+        if v_start == v_dest:
+            print((v_start, v_dest))
+            return
+        visited = [False] * self.v_num
+        visited[v_start] = True
+        v_prev = [-1]*self.v_num
+        self.recursive_dfs(v_start, v_dest, visited, v_prev)
+        self.print_road(v_prev, v_start, v_dest)
+
+    def recursive_dfs(self, v_start, v_dest, visited, v_prev):
+        if v_start == v_dest:
+            return
+        cur_node = self.n_metric[v_start]._head
+        rec = True
+        while cur_node.next_node is not None:
+            next_v = cur_node.next_node.value
+            if visited[next_v] is False:
+                rec = False
+                visited[next_v] = True
+                v_prev[next_v] = v_start
+                self.recursive_dfs(next_v, v_dest, visited, v_prev)
+                break
+            else:
+                cur_node = cur_node.next_node
+        if rec:
+            v_start = v_prev[v_start]
+            self.recursive_dfs(v_start, v_dest, visited, v_prev)
+
 
 if __name__ == "__main__":
     sample_graph = MyGraph()
@@ -93,5 +123,7 @@ if __name__ == "__main__":
     sample_graph.add_edge((7, 8))
     sample_graph.output_vertex()
     sample_graph.output_edge()
-    sample_graph.bfs(0, 5)
+    sample_graph.bfs(0, 4)
+    print("=====")
+    sample_graph.dfs(0, 4)
 
