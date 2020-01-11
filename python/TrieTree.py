@@ -48,6 +48,7 @@ if __name__ == "__main__":
     try_trie.insert('hello')
     try_trie.insert('her')
     try_trie.insert('hery')
+    try_trie.insert('herybaby')
     try_trie.insert('take')
     try_trie.insert('tap')
     print(try_trie.search('her'))
