@@ -1,7 +1,6 @@
 # calculate reverse value when merge two ordered list
 def merge_value(lis_a, lis_b, sum=0):
     tmp = []
-    tag = 0
     index_a = index_b = 0
     while lis_a or lis_b:
         if index_a == len(lis_a):
@@ -9,20 +8,18 @@ def merge_value(lis_a, lis_b, sum=0):
             break
         elif index_b == len(lis_b):
             tmp += lis_a[index_a:]
+            sum += (len(lis_a)-index_a)*len(lis_b)
             break
 
         if lis_a[index_a] <= lis_b[index_b]:
             tmp.append(lis_a[index_a])
+            sum += index_b
             index_a += 1
-            tag = 0
         else:
             tmp.append(lis_b[index_b])
-            if tag == 0:
-                sum = sum + index_b + 1
-            else:
-                sum += 1
             index_b += 1
     return tmp, sum
+
 
 def merge_sort(in_lis):
     if len(in_lis) == 1:
