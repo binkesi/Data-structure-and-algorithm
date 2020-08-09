@@ -2,7 +2,7 @@ import time
 
 def insertion_sort(input_list):
     assert isinstance(input_list, list)
-    if len(input_list) == 1:
+    if len(input_list) <= 1:
         return input_list
     for i in range(1, len(input_list)):
         value = input_list[i]
