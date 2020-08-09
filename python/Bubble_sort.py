@@ -1,17 +1,13 @@
 import time
-def bubble_sort(input_list):
-    assert isinstance(input_list, list)
-    for j in range(0, len(input_list)):
-        flag = False
-        for i in range(0, len(input_list)-1-j):
-            if input_list[i] > input_list[i+1]:
-                tmp = input_list[i]
-                input_list[i] = input_list[i+1]
-                input_list[i+1] = tmp
-                flag = True
-            else:
-                pass
-        if flag == False:
+def bubble_sort(list_a):
+    l = len(list_a)
+    for i in range(l, 0, -1):
+        flag = 0
+        for j in range(i-1):
+            if list_a[j+1] < list_a[j]:
+                list_a[j], list_a[j+1] = list_a[j+1], list_a[j]
+                flag = 1
+        if flag == 0:
             break
 
 if __name__ == "__main__":
