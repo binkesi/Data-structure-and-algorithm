@@ -1,26 +1,31 @@
 import time
 
-def swap(input_list, i, j):
-    tmp = input_list[i]
-    input_list[i] = input_list[j]
-    input_list[j] = tmp
-
 def quick_sort(input_list):
-    if len(input_list) <= 1:
+    l = len(input_list)
+    if l <= 1: return input_list
+    if l == 2:
+        if input_list[0] > input_list[1]:
+            input_list[0], input_list[1] = input_list[1], input_list[0]
         return input_list
-    q_div = input_list[-1]
+    if input_list[-1] < input_list[0] and input_list[-1] < input_list[l//2]:
+        if input_list[l//2] < input_list[0]:
+            input_list[l//2], input_list[0] = input_list[0], input_list[l//2]
+    elif input_list[-1] >= input_list[0] and input_list[-1] >= input_list[l//2]:
+        if input_list[l//2] >= input_list[0]:
+            input_list[l//2], input_list[0] = input_list[0], input_list[l//2]
     i = j = 0
-    while j != len(input_list)-1:
-        if input_list[j] < q_div:
-            swap(input_list, i, j)
+    mid = input_list[-1]
+    while j < l-1:
+        if input_list[j] < mid:
+            input_list[i], input_list[j] = input_list[j], input_list[i]
             i += 1
             j += 1
         else:
             j += 1
-    swap(input_list, i, j)
-    left_list = input_list[0:i]
-    right_list = input_list[i+1:]
-    return(quick_sort(left_list) + [q_div] + quick_sort(right_list))
+    input_list[i], input_list[-1] = input_list[-1], input_list[i]
+    return quick_sort(input_list[0:i]) + [mid] + quick_sort(input_list[i+1:])
+    
+
 
 def find_kth(input_list, k):
     l = len(input_list)
@@ -36,12 +41,12 @@ def find_kth(input_list, k):
     i = j = 0
     while j != len(input_list)-1:
         if input_list[j] < q_div:
-            swap(input_list, i, j)
+            input_list[i], input_list[j] = input_list[j], input_list[i]
             i += 1
             j += 1
         else:
             j += 1
-    swap(input_list, i, j)
+    input_list[i], input_list[j] = input_list[j], input_list[i]
     left_list = input_list[0:i]
     right_list = input_list[i+1:]
     if len(left_list) == k-1:
