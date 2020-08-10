@@ -11,23 +11,19 @@ def merge_sort(input_list):
 
 def merge(list1, list2):
     add_list = []
+    piot = max(list1[-1], list2[-1])
+    if list1[-1] <= list2[-1]:
+        list1.append(piot)
+    else:
+        list2.append(piot)
     cur1 = cur2 = 0
-    list1.append(None)
-    list2.append(None)
-    while list1[cur1] is not None and list2[cur2] is not None:
-        if list1[cur1] <= list2[cur2]:
+    while cur1 < len(list1) and cur2 < len(list2):
+        if list1[cur1] < list2[cur2]:
             add_list.append(list1[cur1])
             cur1 += 1
-            continue
         else:
             add_list.append(list2[cur2])
             cur2 += 1
-            continue
-    if list1[cur1] is None:
-        add_list = add_list + list2[cur2:-1]
-    else:
-        add_list = add_list + list1[cur1:-1]
-
     return add_list
 
 
