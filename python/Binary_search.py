@@ -21,9 +21,9 @@ def binary_search_first(input_list, value):
     while low <= high:
         mid = int(low + ((high - low) >> 1))
         if input_list[mid] == value:
-            while input_list[mid] == value and mid >= 0:
+            while mid-1 >= 0 and input_list[mid-1] == value:
                 mid = mid - 1
-            return mid + 1
+            return mid
         elif input_list[mid] > value:
             high = mid - 1
         elif input_list[mid] < value:
