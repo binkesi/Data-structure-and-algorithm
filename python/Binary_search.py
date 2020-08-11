@@ -13,6 +13,7 @@ def binary_search(input_list, value):
             high = mid - 1
         elif input_list[mid] < value:
             low = mid + 1
+    return -1
 
 def binary_search_first(input_list, value):
     l = len(input_list)
@@ -28,6 +29,7 @@ def binary_search_first(input_list, value):
             high = mid - 1
         elif input_list[mid] < value:
             low = mid + 1
+    return -1
 
 def binary_search_last(input_list, value):
     l = len(input_list)
@@ -43,6 +45,7 @@ def binary_search_last(input_list, value):
             high = mid - 1
         elif input_list[mid] < value:
             low = mid + 1
+    return -1
 
 def binary_search_first_bigger(input_list, value):
     l = len(input_list)
@@ -56,6 +59,7 @@ def binary_search_first_bigger(input_list, value):
             high = mid - 1
         elif input_list[mid] < value:
             low = mid + 1
+    return -1
 
 def binary_search_last_smaller(input_list, value):
     l = len(input_list)
@@ -69,11 +73,12 @@ def binary_search_last_smaller(input_list, value):
             high = mid - 1
         elif input_list[mid] <= value:
             low = mid + 1
+    return -1
 
 
 if __name__ == "__main__":
     my_list = [1, 2, 5, 7, 8, 10, 14, 16, 17, 35, 35, 35, 35, 41, 43, 44, 50]
-    print(binary_search(my_list, 35))
-    print(binary_search_first(my_list, 35))
-    print(binary_search_first_bigger(my_list, 35))
-    print(binary_search_last_smaller(my_list, 35))
+    print(binary_search(my_list, 9))
+    print(binary_search_first(my_list, 9))
+    print(binary_search_first_bigger(my_list, 89))
+    print(binary_search_last_smaller(my_list, -1))
