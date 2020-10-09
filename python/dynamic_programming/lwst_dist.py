@@ -19,9 +19,15 @@ def lwst_dist(a, b, init_dist):
 def lwst_dist_dp(a, b):
     dp = [[0]*len(a) for _ in range(len(b))]
     for i in range(len(a)):
-        dp[0][i] = i
+        if a[i] == b[0]:
+            dp[0][i] = i
+        else:
+            dp[0][i] = dp[0][i-1]+1
     for j in range(len(b)):
-        dp[j][0] = j
+        if b[j] == a[0]:
+            dp[j][0] = j
+        else:
+            dp[j][0] = dp[j-1][0]+1
     for i in range(1, len(a)):
         for j in range(1, len(b)):
             if a[i] == b[j]:
