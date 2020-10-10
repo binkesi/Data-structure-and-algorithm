@@ -28,7 +28,18 @@ def buy_taobao_dp(commodity, limit):
             else:
                 if dp[i-1][j] == 1:
                     m_sum = min(m_sum, j + commodity[i])
-    return m_sum
+    buy_list = []
+    cur_sum = m_sum
+    for i in range(len(commodity)-1, -1, -1):
+        if cur_sum == 0:
+            break
+        if dp[i-1][cur_sum] == 1:
+            continue
+        if cur_sum-commodity[i] >= 0 and dp[i][cur_sum-commodity[i]] == 1:
+            buy_list.append(i)
+            cur_sum = cur_sum-commodity[i]
+    buy_list.reverse()
+    return buy_list
 
 # dp method with one dimension list.    
 def buy_taobao_dp_oned(commodity, limit):
