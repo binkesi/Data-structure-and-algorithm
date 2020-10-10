@@ -27,6 +27,23 @@ def buy_taobao_dp(commodity, limit):
                 if dp[i-1][j] == 1:
                     m_sum = min(m_sum, j + commodity[i])
     return m_sum
+    
+def buy_taobao_dp_oned(commodity, limit):
+    m_sum = float("inf")
+    all_sum = sum(commodity)
+    dp = [0] * all_sum
+    if commodity[0] < limit:
+        dp[commodity[0]] = 1
+    else:
+        m_sum = commodity[0]
+    for i in range(1, len(commodity)):
+        for j in range(all_sum-1, 0, -1):
+            if dp[j] == 1:
+                if j + commodity[i] < limit:
+                    dp[j+commodity[i]] = 1
+                else:
+                    m_sum = min(m_sum, j + commodity[i])
+    return m_sum
             
 
 if __name__ == "__main__":
@@ -35,3 +52,4 @@ if __name__ == "__main__":
     buy_taobao(commodity, 0, limit, 0)
     print(min_sum)
     print(buy_taobao_dp(commodity, limit))
+    print(buy_taobao_dp_oned(commodity, limit))
