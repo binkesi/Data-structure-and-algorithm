@@ -34,16 +34,32 @@ def packet_dp_oned(stones, max_w):
     if stones[0] <= max_w:
         dp[stones[0]] = 1
     for i in range(1, len(stones)):
-        for j in range(max_w, 0, -1):
+        for j in range(max_w, -1, -1):
             if dp[j] == 1 and j+stones[i] <= max_w:
                 dp[j+stones[i]] = 1
-    for k in range(max_w, 0, -1):
+    for k in range(max_w, -1, -1):
         if dp[k] == 1:
             return k
+
+# 0-1 packet dp with value.            
+def packet_dp_value(stones, values, max_w):
+    dp = [-1] * (max_w+1)
+    dp[0] = 0
+    if stones[0] <= max_w:
+        dp[stones[0]] = values[0]
+    for i in range(1, len(stones)):
+        for j in range(max_w, -1, -1):
+            if dp[j] != -1 and j+stones[i] <= max_w:
+                dp[j+stones[i]] = max(dp[j+stones[i]], dp[j]+values[i])
+    return max(dp)
+        
         
 if __name__ == "__main__":
     stones = [2, 2, 4, 6, 3]
-    packet(stones, 0, 9, 0)
+    values = [3, 4, 8, 9, 6]
+    max_w = 9
+    packet(stones, 0, max_w, 0)
     print(max_weight)
-    print(packet_dp(stones, 9))
-    print(packet_dp_oned(stones, 9))
+    print(packet_dp(stones, max_w))
+    print(packet_dp_oned(stones, max_w))
+    print(packet_dp_value(stones, values, max_w))
