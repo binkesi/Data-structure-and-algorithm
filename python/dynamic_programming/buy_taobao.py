@@ -1,3 +1,4 @@
+# backtracking method.
 min_sum = float("inf")
 def buy_taobao(commodity, index, limit, cur):
     global min_sum
@@ -8,7 +9,8 @@ def buy_taobao(commodity, index, limit, cur):
         return
     buy_taobao(commodity, index+1, limit, cur+commodity[index])
     buy_taobao(commodity, index+1, limit, cur)
-    
+
+# dp method with two dimension list.    
 def buy_taobao_dp(commodity, limit):
     m_sum = float("inf")
     all_sum = sum(commodity)
@@ -27,7 +29,8 @@ def buy_taobao_dp(commodity, limit):
                 if dp[i-1][j] == 1:
                     m_sum = min(m_sum, j + commodity[i])
     return m_sum
-    
+
+# dp method with one dimension list.    
 def buy_taobao_dp_oned(commodity, limit):
     m_sum = float("inf")
     all_sum = sum(commodity)
