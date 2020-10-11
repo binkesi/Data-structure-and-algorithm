@@ -23,9 +23,22 @@ def packet_dp(stones, max_w):
             # put in ith. stone.
             if dp[i-1][j] == 1 and j+stones[i] <= max_w:
                 dp[i][j+stones[i]] = dp[i-1][j]
-    for k in range(max_w, 0, -1):
+    cur_w = 0
+    stones_list = []
+    for k in range(max_w, -1, -1):
         if dp[-1][k] == 1:
-            return k
+            cur_w = k
+            break
+    for i in range(len(stones)-1, 0, -1):
+        if cur_w == 0:
+            break
+        if dp[i-1][cur_w-stones[i]] == 1:
+            cur_w -= stones[i]
+            stones_list.append(stones[i])
+        elif dp[i-1][cur_w] == 1:
+            continue
+    stones_list.reverse()
+    return stones_list
             
 # 0-1 packet dp method, one dimesion.
 def packet_dp_oned(stones, max_w):
