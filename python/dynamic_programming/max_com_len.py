@@ -34,7 +34,35 @@ def max_com_dp(a, b):
                 dp[i][j] = max(dp[i-1][j-1]+1, dp[i-1][j], dp[i][j-1])
             else:
                 dp[i][j] = max(dp[i-1][j-1], dp[i-1][j], dp[i][j-1])
-    return dp[-1][-1]
+    for i in dp:
+        print(i)
+    com_str = ""
+    a_ind = len(a)-1
+    b_ind = len(b)-1
+    while a_ind >= 0 and b_ind >= 0:
+        print(a_ind, b_ind)
+        if a[a_ind] == b[b_ind]:
+            com_str += a[a_ind]
+            if a_ind == 0 and b_ind == 0:
+                break
+            if a_ind >= 1 and b_ind >= 1 and dp[a_ind][b_ind]-1 == dp[a_ind -1][b_ind-1]:
+                a_ind -= 1
+                b_ind -= 1
+            elif a_ind >= 1 and dp[a_ind][b_ind] == dp[a_ind -1][b_ind]:
+                a_ind -= 1
+            elif b_ind >= 1 and dp[a_ind][b_ind] == dp[a_ind][b_ind-1]: 
+                b_ind -= 1
+        else:
+            if a_ind == 0 and b_ind == 0:
+                break
+            if a_ind >= 1 and b_ind >=1 and dp[a_ind][b_ind] == dp[a_ind-1][b_ind-1]:
+                a_ind -= 1
+                b_ind -= 1
+            elif a_ind>= 1 and dp[a_ind][b_ind] == dp[a_ind-1][b_ind]:
+                a_ind -= 1
+            elif b_ind>= 1 and dp[a_ind][b_ind] == dp[a_ind][b_ind-1]:
+                b_ind -= 1
+    return com_str[::-1]
         
 if __name__ == "__main__":
     a = "mtacnu"
